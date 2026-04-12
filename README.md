@@ -51,10 +51,9 @@ Instead of just studying theory, I focused on **hands-on implementation**, solvi
 Whatsapp-Chat-Analyzer/
 │
 ├── app.py                  # Main application
-├── helper.py               # Core logic functions
-├── preprocessor.py         # Chat cleaning & parsing
+├── annalyzer.py            # Core logic functions
 ├── requirements.txt        # Dependencies
-├── chat.txt                # Sample dataset
+├── index.html              # UI
 └── README.md               # Project documentation
 ```
 
