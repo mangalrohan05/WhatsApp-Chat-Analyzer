@@ -1,177 +1,49 @@
-# 📊 WhatsApp Chat Analyzer
+# WhatsApp Chat Analyzer 📊
 
-A data-driven NLP project that transforms raw WhatsApp chat exports into meaningful insights, statistics, and visualizations.
+> Transform raw WhatsApp chat exports into rich NLP insights — activity heatmaps, word clouds, sentiment analysis, and per-user breakdowns.
 
----
+[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-app-red?logo=streamlit)](https://streamlit.io)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://whats-app-chat-analyzer-virid.vercel.app)
 
-## 🚀 Project Overview
+🚀 **[Live Demo](https://whats-app-chat-analyzer-virid.vercel.app)**
 
-This project analyzes WhatsApp chat data to extract useful information such as:
+## Features
 
-- 📈 Message statistics (total messages, words, media, links)  
-- 👤 Most active users  
-- 📅 Timeline analysis (daily/monthly activity)  
-- 🔤 Word frequency and common words  
-- 😂 Emoji analysis  
-- ☁️ WordCloud visualization  
-- 📊 Activity heatmaps  
+- **Message Statistics** — total messages, words, media, links; overall and per-user
+- **Activity Heatmap** — message frequency by day of week × hour of day
+- **Word Cloud** — most common words (stopwords removed) for group or individual
+- **Sentiment Analysis** — positive / negative / neutral message classification per user
+- **Top Contributors** — bar chart of most active members
+- **Monthly & Daily Timelines** — message volume over time
+- **Emoji Analysis** — most used emojis per user
 
-The goal of this project was not just to build something functional, but to **learn by building** — applying concepts from Python, Data Analysis, and NLP in a real-world scenario.
+## Tech Stack
 
----
+| Component | Technology |
+|---|---|
+| Backend / NLP | Python, NLTK |
+| Visualisation | Matplotlib, WordCloud |
+| Frontend | Streamlit |
+| Parsing | Custom regex WhatsApp parser |
 
-## 🧠 Learning Objective
+## Setup
 
-This project was built while learning:
-
-- Python (Data handling & scripting)  
-- Pandas & NumPy (Data analysis)  
-- Matplotlib & Seaborn (Visualization)  
-- NLP basics (Text preprocessing, TF-IDF, sentiment)  
-- Regular Expressions (Chat parsing)  
-
-Instead of just studying theory, I focused on **hands-on implementation**, solving real problems step-by-step.
-
----
-
-## ⚙️ Features
-
-- ✔️ Clean parsing of WhatsApp chat export (.txt)  
-- ✔️ Handles media messages & system messages  
-- ✔️ User-wise analysis  
-- ✔️ Hinglish text handling (basic level)  
-- ✔️ Emoji extraction and analysis  
-- ✔️ Visual dashboards  
-
----
-
-## 🏗️ Project Structure
-
-```
-Whatsapp-Chat-Analyzer/
-│
-├── app.py                  # Main application
-├── annalyzer.py            # Core logic functions
-├── requirements.txt        # Dependencies
-├── index.html              # UI
-└── README.md               # Project documentation
-```
-
----
-
-## 🛠️ Installation & Setup
-
-### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/Whatsapp-Chat-Analyzer.git
-cd Whatsapp-Chat-Analyzer
-```
-
-### 2️⃣ Install dependencies
-```bash
+git clone https://github.com/mangalrohan05/WhatsApp-Chat-Analyzer
+cd WhatsApp-Chat-Analyzer
 pip install -r requirements.txt
-```
-
-### 3️⃣ Run the project
-```bash
 streamlit run app.py
 ```
 
----
+Export a WhatsApp chat (without media) and upload the .txt file in the app.
 
-## 📊 How It Works
+## Project Structure
 
-1. Export WhatsApp chat as `.txt`  
-2. Upload it into the app  
-3. The system:
-   - Parses messages using regex  
-   - Cleans text (removes media/system messages)  
-   - Converts into structured DataFrame  
-   - Applies analysis functions  
-4. Displays insights using charts & visuals  
-
----
-
-## 🧪 Sample Insights
-
-- Who texts the most?  
-- Which day is most active?  
-- Most used words and emojis  
-- Monthly activity trends  
-- Peak chatting hours  
-
----
-
-## 💡 My Learning Approach
-
-This project reflects my approach to learning:
-
-- I **did not just copy code** — I tried to understand each step  
-- Broke the project into smaller problems:
-  - Parsing text  
-  - Cleaning data  
-  - Analysis  
-  - Visualization  
-- Faced real issues like:
-  - Regex errors  
-  - Handling Hinglish text  
-  - Missing libraries (like stopwords, emoji, etc.)  
-
----
-
-## 🤖 Use of ChatGPT
-
-During development, I used ChatGPT as a **learning assistant**, not a shortcut.
-
-### How I used it:
-- Understanding concepts like:
-  - TF-IDF  
-  - Word2Vec differences  
-  - Sentiment analysis  
-- Debugging errors (e.g., missing modules, regex issues)  
-- Improving code structure  
-- Getting guidance on next steps  
-
-### Important:
-- The **core implementation and integration were done by me**  
-- ChatGPT helped me **learn faster**, not skip learning  
-
-This project represents a **build-with-learning mindset**, not copy-paste development.
-
----
-
-## ⚠️ Challenges Faced
-
-- Handling inconsistent chat formats  
-- Dealing with Hinglish/mixed language data  
-- Extracting emojis properly  
-- Optimizing DataFrame operations  
-- Understanding NLP concepts deeply  
-
----
-
-## 🔮 Future Improvements
-
-- Advanced NLP (better sentiment analysis)  
-- Hinglish → English normalization  
-- Chat clustering & topic modeling  
-- Deployment (Web hosting)  
-- Real-time chat analytics  
-
----
-
-## 🙌 Conclusion
-
-This project is more than just a tool — it’s a **learning journey**.
-
-It demonstrates:
-- Practical application of concepts  
-- Problem-solving skills  
-- Ability to learn independently with guidance  
-
----
-
-## 📌 Author
-
-**Rohan Mangal**  
-3rd Year BE Student, MBM University, Jodhpur  
+```
+WhatsApp-Chat-Analyzer/
+├── analyzer.py      # Core NLP & stat functions
+├── app.py           # Streamlit web app
+├── model/           # Sentiment model artifacts
+└── requirements.txt
+```
